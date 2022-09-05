@@ -1,4 +1,23 @@
-<h1>Probando conexión...</h1>
+<h1>Texto</h1>
+<h2>{{ section.settings.liquid-ref }}</h2>
+
+<h1>Checkbox</h1>
+{% if section.settings.liquid-checkbox == true %}
+    <h2>El checkbox fue checkeado</h2>
+{% else %}
+    <h2>El checkbox no fue checkeado</h2>
+{% endif %}
+
+<h1>Numbers</h1>
+{% if section.settings.liquid-number > 0 %}
+    <h2>{{section.settings.liquid-number}}</h2>
+{% endif %}
+
+<h1>Radio</h1>
+{{ section.settings.liquid-radio }}
+
+<h1>Selección de Frameworks:</h1>
+{{ section.settings.liquid-select }}
 
 {% schema %}
 {
@@ -7,7 +26,56 @@
         {
             "id": "liquid-ref",
             "type": "text",
-            "label": "A Reference for Shopify Liquid."
+            "label": "A Reference for Shopify Liquid:"
+        },
+        {
+            "id": "liquid-checkbox",
+            "type": "checkbox",
+            "label": "A checkbox in liquid:"
+        },
+        {
+            "id": "liquid-number",
+            "type": "number",
+            "label": "Add a number:"
+        },
+        {
+            "id": "liquid-radio",
+            "type": "radio",
+            "label": "Elige una talla:",
+            "options": [
+                {
+                    "value": "Talla S",
+                    "label": "S"
+                },
+                {
+                    "value": "Talla M",
+                    "label": "M"
+                },
+                {
+                    "value": "Talla L",
+                    "label": "L"
+                }
+            ]
+        },
+        {
+            "id": "liquid-select",
+            "type": "select",
+            "label": "Selecciona un Framework:",
+            "options": [
+                {
+                    "value": "React JS",
+                    "label": "React JS"
+                },
+                {
+                    "value": "Angular",
+                    "label": "Angular"
+                },
+                {
+                    "value": "Vue JS",
+                    "label": "Vue JS"
+                }
+            ],
+            "default": "React JS"
         }
     ],
     "templates": ["index", "page", "product"],

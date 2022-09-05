@@ -1,0 +1,35 @@
+{{ section.settings.liquid-select }}
+
+
+{% schema %}
+{
+    "name": "New Blog Posts",
+    "settings": [
+        {
+            "id": "post-select",
+            "type": "select",
+            "label": "Selecciona un Framework:",
+            "options": [
+                {
+                    "value": "React JS",
+                    "label": "React JS"
+                },
+                {
+                    "value": "Angular",
+                    "label": "Angular"
+                },
+                {
+                    "value": "Vue JS",
+                    "label": "Vue JS"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Blog Posts",
+            "category": "Posts"
+        }
+    ]
+}
+{% endschema %}
