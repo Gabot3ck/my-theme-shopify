@@ -1,5 +1,11 @@
 {
   "sections": {
+    "166233709391a2a46e": {
+      "type": "liquid-ref",
+      "settings": {
+        "liquid-ref": ""
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -217,6 +223,7 @@
     }
   },
   "order": [
+    "166233709391a2a46e",
     "image_banner",
     "16623364395a964136",
     "rich_text",
