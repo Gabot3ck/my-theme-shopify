@@ -1,0 +1,20 @@
+<h2>Mostrando mi nueva Galería</h2>
+<h1>Checkbox</h1>
+{% if section.settings.galeria-check == true %}
+    <h2>El checkbox fue checkeado</h2>
+{% else %}
+    <h2>El checkbox no fue checkeado</h2>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Garlería de Ropa",
+    "settings": [
+        {
+            "id": "galeria-check",
+            "type": "checkbox",
+            "label": "Elige una talla"
+        }
+    ]
+}
+{% endschema %}
