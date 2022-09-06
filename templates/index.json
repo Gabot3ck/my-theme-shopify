@@ -3,7 +3,10 @@
     "166233709391a2a46e": {
       "type": "liquid-ref",
       "settings": {
-        "liquid-ref": ""
+        "liquid-ref": "",
+        "liquid-checkbox": false,
+        "liquid-radio": "Talla S",
+        "liquid-select": "React JS"
       }
     },
     "image_banner": {
@@ -52,12 +55,6 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
-      }
-    },
-    "16623364395a964136": {
-      "type": "liquid-ref",
-      "settings": {
-        "liquid-ref": ""
       }
     },
     "rich_text": {
@@ -225,7 +222,6 @@
   "order": [
     "166233709391a2a46e",
     "image_banner",
-    "16623364395a964136",
     "rich_text",
     "featured_collection",
     "collage",
