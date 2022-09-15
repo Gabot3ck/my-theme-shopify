@@ -1,0 +1,33 @@
+<div class="gallery">
+    {% for block in section.blocks %}
+        {{ block.settings.image }}
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+    "name": "Slideshow",
+    "tag": "section",
+    "class": "slideshow",
+    "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": "Slideshow"
+        }
+    ],
+    "blocks": [
+        {
+        "name": "Nombre de Imagen",
+        "type": "image",
+        "settings": [
+            {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Imagen de galería"
+            }
+        ]
+        }
+    ]
+}
+{% endschema %}
