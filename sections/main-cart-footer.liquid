@@ -62,9 +62,11 @@
                 <div class="wrapper_form">
                   
                 </div>
+
+                <!-- Validación de términos y Condiciones -->
                 <p class="terminos"><input type="checkbox" name="cb-cars" value="likes" id="check_terminos"> "Acepto los Términos de la tienda."</p>
 
-                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% unless cart == empty %} disabled{% endunless %} form="cart">
+                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
                 </button>
               </div>
@@ -87,30 +89,48 @@
   .terminos{
     display: block;
   }
+  .textAlert{
+    margin: 0;
+    paddin: 0;
+    font-weight: 600;
+    text-align: start;
+    color: red;
+  }
 {% endstyle %}
 
 <script>
-  // Validando el check de Terminos
-  
-
-
   document.addEventListener('DOMContentLoaded', function() {
 
+    // Validando el check de Terminos
     const checkbox = document.getElementById("check_terminos");
     const btnCheck = document.getElementById("checkout");
     const p = document.querySelector(".terminos");
     const textAlert = document.createElement("p");
-    textAlert.textContent = "Debes estar de acuerdo con los Términos y Condiciones para poder avanzar."
+    textAlert.classList.add("textAlert");
+    textAlert.textContent = "Debes aceptar los Términos y Condiciones para poder avanzar."
 
 
     checkbox.addEventListener( 'change', function() {
       if(this.checked) {
-        console.log("Hola mundo");
+        textAlert.remove();
+        
       } else {
         p.after(textAlert);
+        
       }
     });
 
+    btnCheck.addEventListener("click", (e) => {
+      if(!checkbox.checked){
+        e.preventDefault();
+        p.after(textAlert);
+      } else {
+        return true;
+      }
+    })
+    // Fin Validando el check de Terminos
+
+    
     function isIE() {
       const ua = window.navigator.userAgent;
       const msie = ua.indexOf('MSIE ');
