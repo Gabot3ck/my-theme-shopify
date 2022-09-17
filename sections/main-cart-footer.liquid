@@ -58,7 +58,9 @@
                     {{ 'sections.cart.update' | t }}
                   </button>
                 </noscript>
-
+                
+                <p><input type="checkbox" name="cb-cars" value="likes" id="terminos"> "Acepto los Términos de la tienda."</p>
+                
                 <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% unless cart == empty %} disabled{% endunless %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
                 </button>
