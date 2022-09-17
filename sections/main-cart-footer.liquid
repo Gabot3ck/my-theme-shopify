@@ -97,11 +97,16 @@
   document.addEventListener('DOMContentLoaded', function() {
 
     const checkbox = document.getElementById("check_terminos");
-    console.log(checkbox);
+    const btnCheck = document.getElementById("checkout");
+    const textAlert = document.createElement("p");
+    textAlert.textContent = "Debes estar de acuerdo con los Términos y Condiciones para poder avanzar."
+
 
     checkbox.addEventListener( 'change', function() {
       if(this.checked) {
         console.log("Hola mundo");
+      } else {
+        checkbox.after(textAlert);
       }
     });
 
