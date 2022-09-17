@@ -90,6 +90,13 @@
 {% endstyle %}
 
 <script>
+  // Validando el check de Terminos
+  const check = document.getElementById("check_terminos");
+  check.addEventListener("check", ()=> {
+    console.log("Hola mundo");
+  })
+  
+
   document.addEventListener('DOMContentLoaded', function() {
     function isIE() {
       const ua = window.navigator.userAgent;
