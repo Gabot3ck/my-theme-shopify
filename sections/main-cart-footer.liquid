@@ -96,10 +96,13 @@
 
   document.addEventListener('DOMContentLoaded', function() {
 
-    const check = document.getElementById("check_terminos");
-    console.log(check);
-    check.addEventListener("checked", () => {
-      console.log("Hola mundo");
+    const checkbox = document.getElementById("check_terminos");
+    console.log(checkbox);
+
+    checkbox.addEventListener( 'change', function() {
+      if(this.checked) {
+        console.log("Hola mundo");
+      }
     });
 
     function isIE() {
