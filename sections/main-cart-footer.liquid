@@ -91,14 +91,17 @@
 
 <script>
   // Validando el check de Terminos
-  const check = document.getElementById("check_terminos");
-  console.log(check);
-  check.addEventListener("checked", () => {
-    console.log("Hola mundo");
-  })
+  
 
 
   document.addEventListener('DOMContentLoaded', function() {
+
+    const check = document.getElementById("check_terminos");
+    console.log(check);
+    check.addEventListener("checked", () => {
+      console.log("Hola mundo");
+    });
+
     function isIE() {
       const ua = window.navigator.userAgent;
       const msie = ua.indexOf('MSIE ');
