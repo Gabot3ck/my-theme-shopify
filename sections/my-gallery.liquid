@@ -1,6 +1,9 @@
 <div class="gallery">
     {% for block in section.blocks %}
-        {{ block.settings.image }}
+        {% if block.type == "image"%}
+            <div class="image-wrap" style="background-image: url('{{ block.settings.image | img_url }}')">
+            </div>
+        {% endif %}
     {% endfor %}
 </div>
 
@@ -8,10 +11,59 @@
 {
     "name": "Galería",
     "settings": [
+        {
+            "type": "select",
+            "id": "per-row",
+            "label": "Images per row",
+            "options": [
+                {
+                    "value": "49.5%",
+                    "label": "2 por fila"
+                },
+                {
+                    "value": "33%",
+                    "label": "3 por fila"
+                },
+                {
+                    "value": "24.5%",
+                    "label": "4 por fila"
+                },
+                {
+                    "value": "19.5%",
+                    "label": "5 por fila"
+                }
+            ],
+            "default": "33%"
+        },
+        {
+            "type": "select",
+            "id": "height",
+            "label": "Altura",
+            "options": [
+                {
+                    "value": "250px",
+                    "label": "250px"
+                },
+                {
+                    "value": "300px",
+                    "label": "300px"
+                },
+                {
+                    "value": "350px",
+                    "label": "350px"
+                },
+                {
+                    "value": "400px",
+                    "label": "400px"
+                }
+            ],
+            "default": "350px"
+            }
+
     ],
     "blocks": [
         {
-        "name": "Nombre de Imagen",
+        "name": "Block para agregar img",
         "type": "image",
         "settings": [
             {
@@ -24,3 +76,13 @@
     ]
 }
 {% endschema %}
+
+{% style %}
+    .image-wrap{
+        width: {{ section.settings.per-row }};
+        height: {{ section.settings.height }};
+        display: inline-block;
+        background-size: cover;
+
+    }
+{% endstyle %}
